@@ -28,18 +28,18 @@ const sendForm = () => {
 
             sendMessage[span.textContent] = input.value
         })
-        
+
         btnModalSubmit.addEventListener('click', () => {
-        
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-                method: 'POST',
-                body: JSON.stringify(sendMessage),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            })
-            .then(() => 
-            console.log('Send'))
+
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    body: JSON.stringify(sendMessage),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                })
+                .then(() =>
+                    console.log('Send'))
 
             modal.style.display = 'none'
 
@@ -49,7 +49,5 @@ const sendForm = () => {
             })
         })
     })
-    
-
 }
 sendForm()
